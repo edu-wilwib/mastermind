@@ -2,14 +2,15 @@ import random as rand
 
 def mastermind(svårighet):
     while True:
-        svar = rand.randint(0, 6666)
-        if "7" in str(svar) or "8" in str(svar) or "9" in str(svar):
-            continue
+        svar = ""
+        for i in range(4):
+            svar += str(rand.randint(1, 6))
         if svårighet == 1:
-            if len(set(str(svar))) < 4:
+            if len(set(svar)) < 4:
                 continue
-        svar = str(svar)
         break
+    
+    gissning_historia = []
     
     for i in range(12):
         print("\n")
@@ -21,5 +22,8 @@ def mastermind(svårighet):
                 int(gissning)
             except ValueError:
                 continue
+            gissning_historia.append(gissning)
             break
-            
+        sträng = f"Drag #{4*' '}Drag{7*' '}Feedback\n{38*'-'}"
+        print(sträng)
+mastermind(2)
