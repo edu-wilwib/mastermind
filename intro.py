@@ -15,3 +15,4 @@ def intro():
         nivå = input("\nAnge önskad nivå: lättare (1), svårare (2) -> ")
         if nivå == "1" or nivå == "2":
             return int(nivå)
+intro()
