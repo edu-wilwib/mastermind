@@ -18,6 +18,8 @@ def mastermind(svårighet):
             gissning = input("Ange en gissning som följd av 4 siffror -> ")
             if len(gissning) != 4:
                 continue
+            elif gissning in gissning_historia:
+                continue
             try:
                 int(gissning)
             except ValueError:
