@@ -26,7 +26,7 @@ def mastermind(svårighet):
                 int(gissning)
             except ValueError:
                 continue
-            gissning_historia.append(gissning)
+            gissning_historia[i] = gissning
             break
         sträng = f"Drag #{4*' '}Drag{7*' '}Feedback\n{38*'-'}"
         print(sträng)
