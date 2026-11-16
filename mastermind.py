@@ -11,6 +11,8 @@ def mastermind(svårighet):
         break
     
     gissning_historia = []
+    for i in range(12):
+        gissning_historia.append("    ")
     
     for i in range(12):
         print("\n")
