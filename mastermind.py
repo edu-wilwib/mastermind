@@ -41,8 +41,8 @@ def mastermind(svårighet):
                     rätt += 1
                 elif gissning[j] in svar:
                     fel += 1
-            feedback_historia[i] = f"{rätt*'✓ '}{fel*'▒ '}"
+            feedback_historia[k] = f"{rätt*'✓ '}{fel*'▒ '}"
             if not gissning_historia[11-i] == "    ":
-                sträng += feedback_historia[i]
+                sträng += feedback_historia[11-i]
         print(sträng, end='')
 mastermind(2)
