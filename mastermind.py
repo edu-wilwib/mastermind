@@ -10,11 +10,14 @@ def mastermind(svårighet):
                 continue
         break
     
+    feedback_historia = []
     gissning_historia = []
     for i in range(12):
         gissning_historia.append("    ")
+        feedback_historia.append("    ")
     
-    for i in range(12):
+    
+    for k in range(12):
         print("\n")
         while True:
             gissning = input("Ange en gissning som följd av 4 siffror -> ")
@@ -26,8 +29,20 @@ def mastermind(svårighet):
                 int(gissning)
             except ValueError:
                 continue
-            gissning_historia[i] = gissning
+            gissning_historia[k] = gissning
             break
         sträng = f"Drag #{4*' '}Drag{7*' '}Feedback\n{38*'-'}"
-        print(sträng)
+        for i in range(12):
+            sträng += f"\n\n{(12-i):>2}{6*' '}{gissning_historia[11-i]}{7*' '}"
+            rätt = 0
+            fel = 0
+            for j in range(4):
+                if gissning[j] == svar[j]:
+                    rätt += 1
+                elif gissning[j] in svar:
+                    fel += 1
+            feedback_historia[i] = f"{rätt*'✓ '}{fel*'▒ '}"
+            if not gissning_historia[11-i] == "    ":
+                sträng += feedback_historia[i]
+        print(sträng, end='')
 mastermind(2)
