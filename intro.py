@@ -8,6 +8,7 @@ def intro():
     print("\nExempel: om den slumpade koden är 2315")
     print("och du gissar 3165")
     print("så blir responsen ☑ ☐ ☐")
+    print("Du kan skriva 0 i din gissning för att testa en idé utan att 0:an kan vara rätt.")
     print("\nDu får välja mellan två svårighetsnivåer:")
     print("Lättare nivå: Alla siffror är garanterat olika.")
     print("Svårare nivå: Det kan finnas upprepningar av en eller flera siffror.")
