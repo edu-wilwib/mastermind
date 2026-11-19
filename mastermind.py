@@ -1,5 +1,11 @@
 import random as rand
 
+def vinst(k):
+    print(f"\n\nGrattis! Du vann spelet på {k+1}:e försöket.")
+
+def förlust(svar):
+    print(f"\n\nNästa gång går det bättre! Rätt rad var: {svar}")
+
 def mastermind(svårighet):
     while True:
         svar = ""
@@ -55,4 +61,9 @@ def mastermind(svårighet):
             if not gissning_historia[11-i] == "    ":
                 sträng += feedback_historia[11-i]
         print(sträng, end='')
+        if gissning == svar:
+            vinst(k)
+            break
+    if not gissning == svar:
+        förlust(svar)
 mastermind(2)
