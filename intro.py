@@ -7,7 +7,7 @@ def intro():
     print("För de siffror som inte finns med i koden ges ingen markering.")
     print("\nExempel: om den slumpade koden är 2315")
     print("och du gissar 3165")
-    print("så blir responsen ✓ ▒ ▒")
+    print("så blir responsen ☑ ☐ ☐")
     print("\nDu får välja mellan två svårighetsnivåer:")
     print("Lättare nivå: Alla siffror är garanterat olika.")
     print("Svårare nivå: Det kan finnas upprepningar av en eller flera siffror.")

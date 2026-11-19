@@ -51,7 +51,7 @@ def mastermind(svårighet):
                             svar_lista[n] = None
                             break
                         n +=1
-            feedback_historia[k] = f"{rätt*'✓ '}{fel*'▒ '}"
+            feedback_historia[k] = f"{rätt*'☑ '}{fel*'☐ '}"
             if not gissning_historia[11-i] == "    ":
                 sträng += feedback_historia[11-i]
         print(sträng, end='')
