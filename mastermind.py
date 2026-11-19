@@ -36,11 +36,17 @@ def mastermind(svårighet):
             sträng += f"\n\n{(12-i):>2}{6*' '}{gissning_historia[11-i]}{7*' '}"
             rätt = 0
             fel = 0
+            svar_lista = list(svar)
+            gissning_lista = list(gissning)
             for j in range(4):
                 if gissning[j] == svar[j]:
                     rätt += 1
-                elif gissning[j] in svar:
-                    fel += 1
+                    svar_lista[j] = None
+            for l in gissning_lista:
+                if l in svar_lista:
+                    fel +=1
+                    
+                    
             feedback_historia[k] = f"{rätt*'✓ '}{fel*'▒ '}"
             if not gissning_historia[11-i] == "    ":
                 sträng += feedback_historia[11-i]
