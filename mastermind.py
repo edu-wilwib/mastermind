@@ -16,7 +16,6 @@ def mastermind(svårighet):
         gissning_historia.append("    ")
         feedback_historia.append("    ")
     
-    
     for k in range(12):
         print("\n")
         while True:
@@ -42,11 +41,16 @@ def mastermind(svårighet):
                 if gissning[j] == svar[j]:
                     rätt += 1
                     svar_lista[j] = None
+                    gissning_lista[j] = None
             for l in gissning_lista:
-                if l in svar_lista:
-                    fel +=1
-                    
-                    
+                if not l == None:
+                    n = 0
+                    for m in svar_lista:
+                        if l == m:
+                            fel += 1
+                            svar_lista[n] = None
+                            break
+                        n +=1
             feedback_historia[k] = f"{rätt*'✓ '}{fel*'▒ '}"
             if not gissning_historia[11-i] == "    ":
                 sträng += feedback_historia[11-i]
