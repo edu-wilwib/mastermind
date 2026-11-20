@@ -1,7 +1,10 @@
 import random as rand
 
 def vinst(k):
-    print(f"\n\nGrattis! Du vann spelet på {k+1}:e försöket.")
+    if k+1 <= 2:
+        print(f"\n\nGrattis! Du vann spelet på {k+1}:a försöket.")
+    else:
+        print(f"\n\nGrattis! Du vann spelet på {k+1}:e försöket.")
     return 1
 
 def förlust(svar):
