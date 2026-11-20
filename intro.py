@@ -1,3 +1,5 @@
+import mastermind
+
 def intro():
     print("Datorn kommer att slumpa fram en kod på fyra siffror mellan 1 och 6.")
     print("Du ska försöka gissa denna kods siffror på max 12 drag.")
@@ -5,10 +7,12 @@ def intro():
     print("För varje gissad korrekt siffra på korrekt plats i koden: ✓")
     print("För varje gissad korrekt siffra på fel plats i koden: ▒")
     print("För de siffror som inte finns med i koden ges ingen markering.")
-    print("\nExempel: om den slumpade koden är 2315")
-    print("och du gissar 3165")
-    print("så blir responsen ☑ ☐ ☐")
-    print("Du kan skriva 0 i din gissning för att testa en idé utan att 0:an kan vara rätt.")
+    svar = mastermind.generera_svar(1)
+    print(f"\nExempel: om den slumpade koden är {svar}")
+    gissning = mastermind.generera_svar(1)
+    print(f"och du gissar {gissning}")
+    print(f"så blir responsen {mastermind.feedback(gissning, svar)}")
+    print("\nDu kan skriva 0 i din gissning för att testa en idé utan att 0:an kan vara rätt.")
     print("\nDu får välja mellan två svårighetsnivåer:")
     print("Lättare nivå: Alla siffror är garanterat olika.")
     print("Svårare nivå: Det kan finnas upprepningar av en eller flera siffror.")
