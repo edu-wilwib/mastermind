@@ -21,6 +21,27 @@ def generera_svar(svårighet):
                 continue
         return svar
 
+def feedback(gissning, svar):
+    rätt = 0
+    fel = 0
+    svar_lista = list(svar)
+    gissning_lista = list(gissning)
+    for j in range(4):
+        if gissning[j] == svar[j]:
+            rätt += 1
+            svar_lista[j] = None
+            gissning_lista[j] = None
+    for l in gissning_lista:
+        if not l == None:
+            n = 0
+            for m in svar_lista:
+                if l == m:
+                    fel += 1
+                    svar_lista[n] = None
+                    break
+                n +=1
+    return f"{rätt*'☑ '}{fel*'☐ '}"
+
 def mastermind(svårighet):
     svar = generera_svar(svårighet)
     
@@ -47,25 +68,7 @@ def mastermind(svårighet):
         sträng = f"Drag #{4*' '}Drag{7*' '}Feedback\n{38*'-'}"
         for i in range(12):
             sträng += f"\n\n{(12-i):>2}{6*' '}{gissning_historia[11-i]}{7*' '}"
-            rätt = 0
-            fel = 0
-            svar_lista = list(svar)
-            gissning_lista = list(gissning)
-            for j in range(4):
-                if gissning[j] == svar[j]:
-                    rätt += 1
-                    svar_lista[j] = None
-                    gissning_lista[j] = None
-            for l in gissning_lista:
-                if not l == None:
-                    n = 0
-                    for m in svar_lista:
-                        if l == m:
-                            fel += 1
-                            svar_lista[n] = None
-                            break
-                        n +=1
-            feedback_historia[k] = f"{rätt*'☑ '}{fel*'☐ '}"
+            feedback_historia[k] = feedback(gissning, svar)
             if not gissning_historia[11-i] == "    ":
                 sträng += feedback_historia[11-i]
         print(sträng, end='')
