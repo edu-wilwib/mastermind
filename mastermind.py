@@ -11,7 +11,7 @@ def förlust(svar):
     print(f"\n\nNästa gång går det bättre! Rätt rad var: {svar}")
     return 0
 
-def mastermind(svårighet):
+def generera_svar(svårighet):
     while True:
         svar = ""
         for i in range(4):
@@ -19,7 +19,10 @@ def mastermind(svårighet):
         if svårighet == 1:
             if len(set(svar)) < 4:
                 continue
-        break
+        return svar
+
+def mastermind(svårighet):
+    svar = generera_svar(svårighet)
     
     feedback_historia = []
     gissning_historia = []
