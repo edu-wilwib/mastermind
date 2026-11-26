@@ -10,7 +10,7 @@ def intro(): #en funktion för att skriva introduktionen och fråga vilken svår
     while True:
         svar = mastermind.generera_svar(1) #genererar ett svar
         gissning = mastermind.generera_svar(1) #generarar en gissning som skulle kunna vara rätt
-        if "☑" in mastermind.feedback(gissning, svar) and "☐" in mastermind.feedback(gissning, svar):
+        if "☑" in mastermind.feedback(gissning, svar) and "☐" in mastermind.feedback(gissning, svar): #gör så att gissningen alltid har (minst) en siffra på rätt plats, och en som ska vara någonstans men inte just där
             break
     print(f"\nExempel: om den slumpade koden är {svar}")
     print(f"och du gissar {gissning}")
