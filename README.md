@@ -19,4 +19,4 @@ Vi flyttade ut stora delar av koden i egna funktioner för att göra den mer lä
 Vi gjorde små förbättringar i koden samt skrev kommentarer på allt.
 
 ## 2026-22-26
-Vi skrev dokumentation i README-filen.
+Vi skrev dokumentation i README-filen. Vi gjorde också så att exemplet på feedback i introt alltid är bra.
