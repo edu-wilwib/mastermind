@@ -7,9 +7,12 @@ def intro(): #en funktion för att skriva introduktionen och fråga vilken svår
     print("För varje gissad korrekt siffra på korrekt plats i koden: ☑")
     print("För varje gissad korrekt siffra på fel plats i koden: ☐")
     print("För de siffror som inte finns med i koden ges ingen markering.")
-    svar = mastermind.generera_svar(1) #genererar ett svar
+    while True:
+        svar = mastermind.generera_svar(1) #genererar ett svar
+        gissning = mastermind.generera_svar(1) #generarar en gissning som skulle kunna vara rätt
+        if "☑" in mastermind.feedback(gissning, svar) and "☐" in mastermind.feedback(gissning, svar):
+            break
     print(f"\nExempel: om den slumpade koden är {svar}")
-    gissning = mastermind.generera_svar(1) #generarar en gissning som skulle kunna vara rätt
     print(f"och du gissar {gissning}")
     print(f"så blir responsen {mastermind.feedback(gissning, svar)}") #skriver feedbacken på svaret kontra gissningen
     print("\nDu kan skriva 0 i din gissning för att testa en idé utan att 0:an kan vara rätt.")
