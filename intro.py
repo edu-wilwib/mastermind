@@ -4,8 +4,8 @@ def intro(): #en funktion för att skriva introduktionen och fråga vilken svår
     print("Datorn kommer att slumpa fram en kod på fyra siffror mellan 1 och 6.")
     print("Du ska försöka gissa denna kods siffror på max 12 drag.")
     print("Efter respektive gissning så kommer du att få en respons:")
-    print("För varje gissad korrekt siffra på korrekt plats i koden: ✓")
-    print("För varje gissad korrekt siffra på fel plats i koden: ▒")
+    print("För varje gissad korrekt siffra på korrekt plats i koden: ☑")
+    print("För varje gissad korrekt siffra på fel plats i koden: ☐")
     print("För de siffror som inte finns med i koden ges ingen markering.")
     svar = mastermind.generera_svar(1) #genererar ett svar
     print(f"\nExempel: om den slumpade koden är {svar}")
